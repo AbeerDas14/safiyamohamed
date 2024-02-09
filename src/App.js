@@ -108,7 +108,7 @@ function App() {
 
       <section className="App-header">
         <header id="section10">
-          <p className='first-text'>Wow jheez</p>
+          <p className='first-text'>Wow relax safiya</p>
         </header>
         {/* "What" Scroll Down Button */}
         <section id="section10" className="demo next-demo">
