@@ -7,34 +7,35 @@ import loveSong from './cheer.mp3'; // Import the love song
 
 function App() {
   const [audioStarted, setAudioStarted] = useState(false);
+  const [currentAudio, setCurrentAudio] = useState(null);
 
   useEffect(() => {
     // Cleanup function for when the component unmounts
     return () => {
       // Pause and reset audio
-      if (audioStarted) {
-        const audio = new Audio(backgroundMusic);
-        audio.pause();
-        audio.currentTime = 0;
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
       }
     };
-  }, [audioStarted]);
+  }, [currentAudio]);
 
-  const playAudio = () => {
-    if (!audioStarted) {
-      let audioSrc = backgroundMusic;
-      let loopAudio = true;
-      // Check if "Yes" checkbox is checked
-      const yesCheckbox = document.getElementById('Yes');
-      if (yesCheckbox.checked) {
-        audioSrc = loveSong;
-        loopAudio = false;
+  const playAudio = (audioFile) => {
+    if (currentAudio) {
+      // If audio is already playing, pause it
+      currentAudio.pause();
+      setCurrentAudio(null);
+      setAudioStarted(false);
+      if (currentAudio.src === audioFile) {
+        // If the same audio file is clicked again, do nothing
+        return;
       }
-      const audio = new Audio(audioSrc);
-      audio.loop = loopAudio;
-      audio.play();
-      setAudioStarted(true);
     }
+    
+    const audio = new Audio(audioFile);
+    setCurrentAudio(audio);
+    audio.play();
+    setAudioStarted(true);
   };
 
   return (
@@ -46,7 +47,7 @@ function App() {
         {/* Scroll Down Button */}
         <section id="section04" className="demo first-demo">
           <div className="link-container">
-            <a href="#section05" onClick={playAudio}><span></span>Hi Abeer</a>
+          <a href="#section05" onClick={() => playAudio(backgroundMusic)}><span></span>Hi Abeer</a>
             <p className='arrow'> ←click</p>
           </div>
         </section>
@@ -166,8 +167,7 @@ function App() {
             <input className="checkbox-input no" type="checkbox" name="answer" id="No" />
             <label className="checkbox-label no">No</label>
             <input className="checkbox-input yes" type="checkbox" name="answer" id="Yes" />
-            <label className="checkbox-label yes" onClick={playAudio} htmlFor="Yes">Yes</label>
-            <div className="answer--yes"></div>
+            <label className="checkbox-label yes" onClick={() => playAudio(loveSong)} htmlFor="Yes">Yes</label>            <div className="answer--yes"></div>
             <div className="answer--no"></div>
           </div>
         </header>
