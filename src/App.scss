@@ -26,7 +26,7 @@ html {
 
 .App-header {
   background-color: #730600;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Tahoma', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -72,7 +72,7 @@ html {
 .arrow{
   margin-left: 25rem;
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   opacity: 50%;
 }
 
@@ -236,7 +236,7 @@ html {
 }
 
 .centered .answer--yes {
-  background-image: url('./us.jpg');
+  background-image: url('./us.jpeg');
   background-repeat: no-repeat;
   background-position: center; /* Center the background image */
   background-size: contain; /* Ensure the background image fits within the container */
@@ -244,7 +244,7 @@ html {
   top: 5%; /* Align the top of the container to the vertical center of the viewport */
   left: 35%; /* Align the left side of the container to the horizontal center of the viewport */
   transform: translate(-50%, -50%); /* Translate the container back by half its width and height */
-  width: 90vw; /* Set the width to 90% of the viewport width */
+  width: 75vw; /* Set the width to 90% of the viewport width */
   height: 90vh; /* Set the height to 90% of the viewport height */
   max-width: 38rem; /* Set a maximum width to prevent the image from becoming too large */
   max-height: 57rem; /* Set a maximum height to prevent the image from becoming too large */
