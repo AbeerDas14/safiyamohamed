@@ -101,7 +101,7 @@ function App() {
         </header>
         {/* "What" Scroll Down Button */}
         <section id="section09" className="demo next-demo">
-          <a href="#section10"><span></span>The browns deserve to die</a>
+          <a href="#section10"><span></span>Brown people deserve to die</a>
         </section>
       </section>
 
