@@ -54,7 +54,7 @@ function App() {
 
       <section className="App-header">
         <header id="section05">
-          <p className='first-text'>Mb for being late</p>
+          <p className='first-text'>Mb for being late lol</p>
         </header>
         {/* "What" Scroll Down Button */}
         <section id="section05" className="demo next-demo">
@@ -100,7 +100,7 @@ function App() {
         </header>
         {/* "What" Scroll Down Button */}
         <section id="section09" className="demo next-demo">
-          <a href="#section10"><span></span>I HATE minorities 💩</a>
+          <a href="#section10"><span></span>The browns deserve to die</a>
         </section>
       </section>
 
