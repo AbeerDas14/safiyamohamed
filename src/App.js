@@ -144,7 +144,7 @@ function App() {
         </header>
         {/* "What" Scroll Down Button */}
         <section id="section13" className="demo next-demo">
-          <a href="#section14"><span></span>Yk ur talking to urself rn right</a>
+          <a href="#section14"><span></span>Ok</a>
         </section>
       </section>
 
